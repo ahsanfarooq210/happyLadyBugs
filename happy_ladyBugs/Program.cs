@@ -10,11 +10,8 @@ namespace happy_ladyBugs
     {
         static void Main(string[] args)
         {
-            
             Console.WriteLine(happyLadybugs("AABCBC"));
             Console.ReadLine();
-
-
         }
 
         private static string happyLadybugs(string b)
@@ -26,7 +23,7 @@ namespace happy_ladyBugs
 
             foreach (char ch in arr)
             {
-                if(hash.ContainsKey(ch))
+                if (hash.ContainsKey(ch))
                 {
                     int num = hash[ch];
                     num += 1;
@@ -34,15 +31,14 @@ namespace happy_ladyBugs
                 }
                 else
                 {
-                    if(ch!='_')
-                    hash.Add(ch, 1);
+                    if (ch != '_')
+                        hash.Add(ch, 1);
                 }
-
             }
 
-            foreach(KeyValuePair<char,int> pair in hash)
+            foreach (KeyValuePair<char, int> pair in hash)
             {
-                if(pair.Value==1)
+                if (pair.Value == 1)
                 {
                     return "NO";
                 }
@@ -56,15 +52,16 @@ namespace happy_ladyBugs
 
 
             flag = false;
-            for (int i=1;i<arr.Length-1;i++)
+            for (int i = 1; i < arr.Length - 1; i++)
             {
-                if(!(arr[i-1]==arr[i]||arr[i+1]==arr[i]))
+                if (!(arr[i - 1] == arr[i] || arr[i + 1] == arr[i]))
                 {
                     flag = true;
                     break;
                 }
             }
-            if(flag==true)
+
+            if (flag == true)
             {
                 return "NO";
             }
@@ -72,12 +69,6 @@ namespace happy_ladyBugs
             {
                 return "YES";
             }
-
-            
-            
-
-
-            
         }
     }
 }
